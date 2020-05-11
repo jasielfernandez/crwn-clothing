@@ -16,6 +16,7 @@ class SignIn extends React.Component{
       password:''
     }
   }
+
     handleSubmit = async event => {
       event.preventDefault();
 
@@ -26,8 +27,6 @@ class SignIn extends React.Component{
       } catch (error) {
         console.log(error);
       }
-      
-
     };
 
     handleChange = event => {
@@ -35,9 +34,6 @@ class SignIn extends React.Component{
 
       this.setState({ [name]: value })
     }
-
-
-  
 
   render() {
     return(
@@ -47,31 +43,28 @@ class SignIn extends React.Component{
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
-          name='email' 
-          type='email' 
-          value={this.state.email} 
-          handleChange={this.handleChange}
-          label='Email'
-          required 
+            name='email' 
+            type='email' 
+            value={this.state.email} 
+            handleChange={this.handleChange}
+            label='Email'
+            required 
           />
-
           <FormInput
-          name='password' 
-          type='password' 
-          value={this.state.password} 
-          handleChange={this.handleChange}
-          label='Password'
-          required 
+            name='password' 
+            type='password' 
+            value={this.state.password} 
+            handleChange={this.handleChange}
+            label='Password'
+            required 
           />
           <div className='button'>
             <CustomButton type='submit' value='Submit Form' > Sign In </CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn> 
+            <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn> 
               Sign In With Google
             </CustomButton>
           </div>
-
         </form>
-
 
       </div>
     );
